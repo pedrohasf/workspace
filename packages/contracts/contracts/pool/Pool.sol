@@ -76,18 +76,7 @@ contract Pool is AffiliateToken, Ownable, ReentrancyGuard, Pausable, Defended {
     blockLocked
     returns (uint256)
   {
-    require(amount <= token.balanceOf(msg.sender), "Insufficient balance");
-    _lockForBlock(msg.sender);
-    _takeFees();
-
-    uint256 sharesBefore = balanceOf(msg.sender);
-    super.deposit(amount);
-    uint256 sharesAfter = balanceOf(msg.sender);
-    uint256 shares = sharesAfter.sub(sharesBefore);
-
-    emit Deposit(msg.sender, amount, shares);
-    _reportPoolTokenHWM();
-    return shares;
+    return _depositFor(amount, msg.sender);
   }
 
   function depositFor(uint256 amount, address recipient)
@@ -98,17 +87,7 @@ contract Pool is AffiliateToken, Ownable, ReentrancyGuard, Pausable, Defended {
     blockLocked
     returns (uint256)
   {
-    require(amount <= token.balanceOf(msg.sender), "Insufficient balance");
-    _lockForBlock(msg.sender);
-    _takeFees();
-
-    uint256 deposited = _deposit(msg.sender, address(this), amount, true);
-    uint256 shares = _sharesForValue(deposited);
-    _mint(recipient, shares);
-
-    emit Deposit(recipient, amount, shares);
-    _reportPoolTokenHWM();
-    return shares;
+    return _depositFor(amount, recipient);
   }
 
   function withdraw(uint256 amount)
@@ -138,6 +117,23 @@ contract Pool is AffiliateToken, Ownable, ReentrancyGuard, Pausable, Defended {
     _reportPoolTokenHWM();
 
     return withdrawal;
+  }
+
+  function transfer(address recipient, uint256 amount)
+    public
+    override
+    blockLocked
+    returns (bool)
+  {
+    return super.transfer(recipient, amount);
+  }
+
+  function transferFrom(
+    address sender,
+    address recipient,
+    uint256 amount
+  ) public override blockLocked returns (bool) {
+    return super.transferFrom(sender, recipient, amount);
   }
 
   function takeFees() external nonReentrant {
@@ -172,6 +168,14 @@ contract Pool is AffiliateToken, Ownable, ReentrancyGuard, Pausable, Defended {
     _withdraw(address(this), rewardsManager, valueFor(balance), true);
   }
 
+  function pauseContract() external onlyOwner {
+    _pause();
+  }
+
+  function unpauseContract() external onlyOwner {
+    _unpause();
+  }
+
   function pricePerPoolToken() public view returns (uint256) {
     return valueFor(1e18);
   }
@@ -182,6 +186,23 @@ contract Pool is AffiliateToken, Ownable, ReentrancyGuard, Pausable, Defended {
 
   function valueFor(uint256 poolTokens) public view returns (uint256) {
     return _shareValue(poolTokens);
+  }
+
+  function _depositFor(uint256 amount, address recipient)
+    internal
+    returns (uint256)
+  {
+    require(amount <= token.balanceOf(msg.sender), "Insufficient balance");
+    _lockForBlock(msg.sender);
+    _takeFees();
+
+    uint256 deposited = _deposit(msg.sender, address(this), amount, true);
+    uint256 shares = _sharesForValue(deposited);
+    _mint(recipient, shares);
+
+    emit Deposit(recipient, amount, shares);
+    _reportPoolTokenHWM();
+    return shares;
   }
 
   function _reportPoolTokenHWM() internal {
@@ -244,32 +265,7 @@ contract Pool is AffiliateToken, Ownable, ReentrancyGuard, Pausable, Defended {
     return amount;
   }
 
-  function pauseContract() external onlyOwner {
-    _pause();
-  }
-
-  function unpauseContract() external onlyOwner {
-    _unpause();
-  }
-
   function _lockForBlock(address account) internal {
     blockLocks[account] = block.number;
-  }
-
-  function transfer(address recipient, uint256 amount)
-    public
-    override
-    blockLocked
-    returns (bool)
-  {
-    return super.transfer(recipient, amount);
-  }
-
-  function transferFrom(
-    address sender,
-    address recipient,
-    uint256 amount
-  ) public override blockLocked returns (bool) {
-    return super.transferFrom(sender, recipient, amount);
   }
 }
