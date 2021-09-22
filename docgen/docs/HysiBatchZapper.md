@@ -9,7 +9,6 @@
 - [`ZappedIntoBatch`](#ZappedIntoBatch_)
 - [`ZappedOutOfBatch`](#ZappedOutOfBatch_)
 - [`ClaimedIntoStable`](#ClaimedIntoStable_)
-- [`Echo`](#Echo_)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -58,8 +57,4 @@ ZappedOutOfBatch(bytes32 batchId, uint8 stableCoinIndex, uint256 threeCurveAmoun
 ### <a name="ClaimedIntoStable_"></a> ClaimedIntoStable {#ClaimedIntoStable_}
 ```
 ClaimedIntoStable(bytes32 batchId, uint8 stableCoinIndex, uint256 threeCurveAmount, uint256 stableCoinAmount, address account)
-```
-### <a name="Echo_"></a> Echo {#Echo_}
-```
-Echo(uint256 amount)
 ```
