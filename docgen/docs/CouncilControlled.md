@@ -11,6 +11,9 @@
 - [`CouncilChanged`](#CouncilChanged_)
 ## Modifiers:
 - [`onlyCouncil()`](#onlyCouncil_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -47,3 +50,8 @@ CouncilChanged(bytes2 _region, address oldCouncil, address newCouncil)
 ```
 onlyCouncil(bytes2 _region)
 ```
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/CouncilControlled_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/CouncilControlled_inheritance_graph.png)

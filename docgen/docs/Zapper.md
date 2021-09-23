@@ -13,6 +13,9 @@
 ## Events:
 - [`ZapIn`](#ZapIn_)
 - [`ZapOut`](#ZapOut_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -60,3 +63,8 @@ ZapIn(address account, address depositToken, uint256 depositAmount, uint256 shar
 ```
 ZapOut(address account, address withdrawalShares, uint256 shares, uint256 withdrawalAmount)
 ```
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/Zapper_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/Zapper_inheritance_graph.png)

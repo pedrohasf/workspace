@@ -19,6 +19,9 @@
 - [`IncentiveToggled`](#IncentiveToggled_)
 ## Modifiers:
 - [`keeperIncentive()`](#keeperIncentive_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -34,9 +37,9 @@ Multiple functions can use the same incentive which can than be updated with one
 Per default there will be always one incentive on index 0
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `_reward`| uint256| The amount in POP the Keeper receives for calling the function| 
-| `_enabled`| bool| Is this Incentive currently enabled?| 
-| `_openToEveryone`| bool| Can anyone call the function for rewards or only keeper?| 
+| `_reward`| uint256| The amount in POP the Keeper receives for calling the function|
+| `_enabled`| bool| Is this Incentive currently enabled?|
+| `_openToEveryone`| bool| Can anyone call the function for rewards or only keeper?|
 ### <a name="updateIncentive_"></a> updateIncentive() {#updateIncentive_}
 ```
 updateIncentive(uint256 _incentiveId, uint256 _reward, bool _enabled, bool _openToEveryone) external 
@@ -95,3 +98,8 @@ IncentiveToggled(uint256 incentiveId, bool enabled)
 ```
 keeperIncentive(uint256 _incentiveId)
 ```
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/KeeperIncentive_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/KeeperIncentive_inheritance_graph.png)

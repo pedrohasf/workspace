@@ -24,6 +24,9 @@ Manages distribution of POP rewards to Popcorn Treasury, DAO Staking, and Benefi
 - [`TreasuryChanged`](#TreasuryChanged_)
 - [`InsuranceChanged`](#InsuranceChanged_)
 - [`RegionChanged`](#RegionChanged_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -46,8 +49,8 @@ Path specification requires at least source token as first in path and POP addre
 Token swap internals implemented as described at https://uniswap.org/docs/v2/smart-contracts/router02/#swapexacttokensfortokens
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `path_`| address[]| Uniswap path specification for source token to POP| 
-| `minAmountOut_`| uint256| Minimum desired amount (>0) of POP tokens to be received from swap| 
+| `path_`| address[]| Uniswap path specification for source token to POP|
+| `minAmountOut_`| uint256| Minimum desired amount (>0) of POP tokens to be received from swap|
 #### Return Values:
 | Return Name | Type | Description |
 |-------------|-------|------------|
@@ -64,7 +67,7 @@ setStaking(contract IStaking staking_) public
 Must implement IStaking and cannot be same as existing
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `staking_`| contract IStaking| Address of new Staking contract| 
+| `staking_`| contract IStaking| Address of new Staking contract|
 ### <a name="setTreasury_"></a> setTreasury() {#setTreasury_}
 ```
 setTreasury(contract ITreasury treasury_) public 
@@ -72,7 +75,7 @@ setTreasury(contract ITreasury treasury_) public
 Must implement ITreasury and cannot be same as existing
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `treasury_`| contract ITreasury| Address of new Treasury contract| 
+| `treasury_`| contract ITreasury| Address of new Treasury contract|
 ### <a name="setInsurance_"></a> setInsurance() {#setInsurance_}
 ```
 setInsurance(contract IInsurance insurance_) public 
@@ -80,7 +83,7 @@ setInsurance(contract IInsurance insurance_) public
 Must implement IInsurance and cannot be same as existing
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `insurance_`| contract IInsurance| Address of new Insurance contract| 
+| `insurance_`| contract IInsurance| Address of new Insurance contract|
 ### <a name="setRegion_"></a> setRegion() {#setRegion_}
 ```
 setRegion(contract IRegion region_) public 
@@ -88,7 +91,7 @@ setRegion(contract IRegion region_) public
 Must implement IRegion and cannot be same as existing
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `region_`| contract IRegion| Address of new Region contract| 
+| `region_`| contract IRegion| Address of new Region contract|
 ### <a name="setRewardSplits_"></a> setRewardSplits() {#setRewardSplits_}
 ```
 setRewardSplits(uint256[4] splits_) public 
@@ -96,7 +99,7 @@ setRewardSplits(uint256[4] splits_) public
 Values must be within rewardsLimit range, specified in percent to 18 decimal place precision
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `splits_`| uint256[4]| Array of RewardTargets enumerated uint256 values within rewardLimits range| 
+| `splits_`| uint256[4]| Array of RewardTargets enumerated uint256 values within rewardLimits range|
 ## Events
 ### <a name="StakingDeposited_"></a> StakingDeposited {#StakingDeposited_}
 ```
@@ -142,3 +145,8 @@ InsuranceChanged(contract IInsurance from, contract IInsurance to)
 ```
 RegionChanged(contract IRegion from, contract IRegion to)
 ```
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/RewardsManager_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/RewardsManager_inheritance_graph.png)

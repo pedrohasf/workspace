@@ -8,6 +8,9 @@
 - [`AccountRevoked`](#AccountRevoked_)
 ## Modifiers:
 - [`defend()`](#defend_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="approveContractAccess_"></a> approveContractAccess() {#approveContractAccess_}
@@ -32,3 +35,8 @@ AccountRevoked(address account)
 ```
 defend()
 ```
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/Defended_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/Defended_inheritance_graph.png)

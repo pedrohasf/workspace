@@ -9,6 +9,9 @@
 - [`GovernanceChanged`](#GovernanceChanged_)
 ## Modifiers:
 - [`onlyGovernance()`](#onlyGovernance_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -37,3 +40,8 @@ GovernanceChanged(address oldGovernance, address newGovernance)
 ```
 onlyGovernance()
 ```
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/Governed_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/Governed_inheritance_graph.png)

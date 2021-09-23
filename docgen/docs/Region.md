@@ -7,6 +7,9 @@
 - [`addRegion()`](#addRegion_)
 ## Events:
 - [`RegionAdded`](#RegionAdded_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -30,3 +33,8 @@ addRegion(bytes2 region_, address beneficiaryVault_) external
 ```
 RegionAdded(bytes2 region)
 ```
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/Region_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/Region_inheritance_graph.png)

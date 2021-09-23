@@ -21,6 +21,9 @@
 - [`RewardBalanceIncreased`](#RewardBalanceIncreased_)
 ## Modifiers:
 - [`vaultExists()`](#vaultExists_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -37,22 +40,22 @@ hasClaim(bytes32 vaultId_, address beneficiary_) public  returns (bool)
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `vaultId_`| bytes32| Bytes32| 
-| `beneficiary_`| address| address of the beneficiary| 
+| `vaultId_`| bytes32| Bytes32|
+| `beneficiary_`| address| address of the beneficiary|
 ### <a name="getVaultStatus_"></a> getVaultStatus() {#getVaultStatus_}
 ```
 getVaultStatus(bytes32 vaultId_) external  returns (enum ParticipationReward.VaultStatus)
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `vaultId_`| bytes32| Bytes32| 
+| `vaultId_`| bytes32| Bytes32|
 ### <a name="getUserVaults_"></a> getUserVaults() {#getUserVaults_}
 ```
 getUserVaults(address account) external  returns (bytes32[])
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `account`| address| address| 
+| `account`| address| address|
 ### <a name="claimReward_"></a> claimReward() {#claimReward_}
 ```
 claimReward(uint256 index_) external 
@@ -62,7 +65,7 @@ This function is used when a user only wants to claim a specific vault or if the
 (lower cost but also lower reward)
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `index_`| uint256| uint256| 
+| `index_`| uint256| uint256|
 ### <a name="claimRewards_"></a> claimRewards() {#claimRewards_}
 ```
 claimRewards(uint256[] indices_) external 
@@ -72,7 +75,7 @@ This function is used when a user only wants to claim multiple vaults at once (p
 The array of indices is limited to 19 as we want to prevent gas overflow of looping through too many vaults
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `indices_`| uint256[]| uint256[]| 
+| `indices_`| uint256[]| uint256[]|
 ### <a name="setRewardsBudget_"></a> setRewardsBudget() {#setRewardsBudget_}
 ```
 setRewardsBudget(uint256 amount) external 
@@ -80,7 +83,7 @@ setRewardsBudget(uint256 amount) external
 When opening a vault this contract must have enough POP to fund the rewardBudget of the new vault
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `amount`| uint256| uint256 reward amount in POP per vault| 
+| `amount`| uint256| uint256 reward amount in POP per vault|
 ### <a name="contributeReward_"></a> contributeReward() {#contributeReward_}
 ```
 contributeReward(uint256 amount) external 
@@ -88,7 +91,7 @@ contributeReward(uint256 amount) external
 Sufficient RewardsBalance will be checked when opening a new vault to see if enough POP exist to support the new Vault
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `amount`| uint256| uint256 amount in POP to be used for vault rewards| 
+| `amount`| uint256| uint256 amount in POP to be used for vault rewards|
 ## Events
 ### <a name="RewardBudgetChanged_"></a> RewardBudgetChanged {#RewardBudgetChanged_}
 ```
@@ -129,3 +132,8 @@ vaultExists(bytes32 vaultId_)
 ```
 ## Parameters:
 - `vaultId_`: Bytes32
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/ParticipationReward_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/ParticipationReward_inheritance_graph.png)

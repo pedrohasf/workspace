@@ -33,6 +33,9 @@
 - [`ApproverRemoved`](#ApproverRemoved_)
 ## Modifiers:
 - [`validAddress()`](#validAddress_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -157,3 +160,8 @@ ApproverRemoved(address approver)
 ```
 validAddress(address _address)
 ```
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/GrantElections_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/GrantElections_inheritance_graph.png)

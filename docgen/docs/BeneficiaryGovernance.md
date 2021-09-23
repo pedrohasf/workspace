@@ -21,6 +21,9 @@ This contract is for submitting beneficiary nomination proposals and beneficiary
 ## Modifiers:
 - [`validAddress()`](#validAddress_)
 - [`enoughBond()`](#enoughBond_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -37,7 +40,7 @@ getNumberOfVoters(uint256 proposalId) external  returns (uint256)
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `proposalId`| uint256| id of the proposal| 
+| `proposalId`| uint256| id of the proposal|
 #### Return Values:
 | Return Name | Type | Description |
 |-------------|-------|------------|
@@ -48,7 +51,7 @@ getStatus(uint256 proposalId) external  returns (enum BeneficiaryGovernance.Prop
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `proposalId`| uint256| id of the proposal| 
+| `proposalId`| uint256| id of the proposal|
 #### Return Values:
 | Return Name | Type | Description |
 |-------------|-------|------------|
@@ -59,45 +62,45 @@ hasVoted(uint256 proposalId, address voter) external  returns (bool)
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `proposalId`| uint256| id of the proposal| 
-| `voter`| address| address opf voter| 
+| `proposalId`| uint256| id of the proposal|
+| `voter`| address| address opf voter|
 ### <a name="createProposal_"></a> createProposal() {#createProposal_}
 ```
 createProposal(address _beneficiary, bytes2 _region, bytes _applicationCid, enum BeneficiaryGovernance.ProposalType _type) external  returns (uint256)
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `_beneficiary`| address| address of the beneficiary| 
-| `_applicationCid`| bytes2| IPFS content hash| 
-| `_type`| bytes| the proposal type (nomination / takedown)| 
+| `_beneficiary`| address| address of the beneficiary|
+| `_applicationCid`| bytes2| IPFS content hash|
+| `_type`| bytes| the proposal type (nomination / takedown)|
 ### <a name="refreshState_"></a> refreshState() {#refreshState_}
 ```
 refreshState(uint256 proposalId) external 
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `proposalId`| uint256| id of the proposal| 
+| `proposalId`| uint256| id of the proposal|
 ### <a name="vote_"></a> vote() {#vote_}
 ```
 vote(uint256 proposalId, enum BeneficiaryGovernance.VoteOption _vote) external 
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `proposalId`| uint256| id of the proposal which you are going to vote| 
+| `proposalId`| uint256| id of the proposal which you are going to vote|
 ### <a name="finalize_"></a> finalize() {#finalize_}
 ```
 finalize(uint256 proposalId) public 
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `proposalId`| uint256| id of the proposal| 
+| `proposalId`| uint256| id of the proposal|
 ### <a name="claimBond_"></a> claimBond() {#claimBond_}
 ```
 claimBond(uint256 proposalId) public 
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `proposalId`| uint256| id of the proposal| 
+| `proposalId`| uint256| id of the proposal|
 ### <a name="setConfiguration_"></a> setConfiguration() {#setConfiguration_}
 ```
 setConfiguration(uint256 _votingPeriod, uint256 _vetoPeriod, uint256 _proposalBond) public 
@@ -128,3 +131,8 @@ validAddress(address _address)
 ```
 enoughBond(address _address)
 ```
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/BeneficiaryGovernance_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/BeneficiaryGovernance_inheritance_graph.png)

@@ -31,6 +31,9 @@
 ## Modifiers:
 - [`updateReward()`](#updateReward_)
 - [`isInitialised()`](#isInitialised_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -44,7 +47,7 @@ getVoiceCredits(address _address) public  returns (uint256)
 todo - check if multiplier is needed for calculating square root of smaller balances
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `_address`| address| address to get voice credits for| 
+| `_address`| address| address to get voice credits for|
 ### <a name="getWithdrawableBalance_"></a> getWithdrawableBalance() {#getWithdrawableBalance_}
 ```
 getWithdrawableBalance(address _address) public  returns (uint256)
@@ -151,3 +154,8 @@ updateReward(address account)
 ```
 isInitialised()
 ```
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/Staking_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/Staking_inheritance_graph.png)

@@ -12,6 +12,9 @@
 - [`BeneficiaryRevoked`](#BeneficiaryRevoked_)
 ## Modifiers:
 - [`validAddress()`](#validAddress_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -52,3 +55,8 @@ BeneficiaryRevoked(address _address)
 ```
 validAddress(address _address)
 ```
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/BeneficiaryRegistry_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/BeneficiaryRegistry_inheritance_graph.png)

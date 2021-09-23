@@ -16,6 +16,9 @@
 - [`StakingChanged`](#StakingChanged_)
 - [`EscrowDurationChanged`](#EscrowDurationChanged_)
 - [`VestingCliffChanged`](#VestingCliffChanged_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -28,14 +31,14 @@ isClaimable(bytes32 escrowId_) external  returns (bool)
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `escrowId_`| bytes32| Bytes32| 
+| `escrowId_`| bytes32| Bytes32|
 ### <a name="getEscrowsByUser_"></a> getEscrowsByUser() {#getEscrowsByUser_}
 ```
 getEscrowsByUser(address account) external  returns (bytes32[])
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `account`| address| address| 
+| `account`| address| address|
 ### <a name="lock_"></a> lock() {#lock_}
 ```
 lock(address account_, uint256 amount_) external 
@@ -89,3 +92,8 @@ EscrowDurationChanged(uint256 _escrowDuration)
 ```
 VestingCliffChanged(uint256 _vestingCliff)
 ```
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/RewardsEscrow_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/RewardsEscrow_inheritance_graph.png)

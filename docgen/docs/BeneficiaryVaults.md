@@ -19,6 +19,9 @@
 - [`BeneficiaryRegistryChanged`](#BeneficiaryRegistryChanged_)
 ## Modifiers:
 - [`_vaultExists()`](#_vaultExists_)
+## Graphs:
+- [`Dependency Graph`](#dependencyGraph)
+- [`Inheritance Graph`](#inheritanceGraph)
 ***
 ## Function Definitions:
 ### <a name="constructor_"></a> constructor() {#constructor_}
@@ -44,8 +47,8 @@ openVault(uint8 vaultId_, bytes32 merkleRoot_) public
 Vault cannot be initialized if it is currently in an open state, otherwise existing data is reset*
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `vaultId_`| uint8| Vault ID in range 0-2| 
-| `merkleRoot_`| bytes32| Merkle root to support claims| 
+| `vaultId_`| uint8| Vault ID in range 0-2|
+| `merkleRoot_`| bytes32| Merkle root to support claims|
 ### <a name="closeVault_"></a> closeVault() {#closeVault_}
 ```
 closeVault(uint8 vaultId_) public 
@@ -53,17 +56,17 @@ closeVault(uint8 vaultId_) public
 Vault must be in an open state
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `vaultId_`| uint8| Vault ID in range 0-2| 
+| `vaultId_`| uint8| Vault ID in range 0-2|
 ### <a name="verifyClaim_"></a> verifyClaim() {#verifyClaim_}
 ```
 verifyClaim(uint8 vaultId_, bytes32[] proof_, address beneficiary_, uint256 share_) public  returns (bool)
 ```
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `vaultId_`| uint8| Vault ID in range 0-2| 
-| `proof_`| bytes32[]| Merkle proof of path to leaf element| 
-| `beneficiary_`| address| Beneficiary address encoded in leaf element| 
-| `share_`| uint256| Beneficiary expected share encoded in leaf element| 
+| `vaultId_`| uint8| Vault ID in range 0-2|
+| `proof_`| bytes32[]| Merkle proof of path to leaf element|
+| `beneficiary_`| address| Beneficiary address encoded in leaf element|
+| `share_`| uint256| Beneficiary expected share encoded in leaf element|
 #### Return Values:
 | Return Name | Type | Description |
 |-------------|-------|------------|
@@ -75,10 +78,10 @@ claimReward(uint8 vaultId_, bytes32[] proof_, address beneficiary_, uint256 shar
 Applies any outstanding rewards before processing claim
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `vaultId_`| uint8| Vault ID in range 0-2| 
-| `proof_`| bytes32[]| Merkle proof of path to leaf element| 
-| `beneficiary_`| address| Beneficiary address encoded in leaf element| 
-| `share_`| uint256| Beneficiary expected share encoded in leaf element| 
+| `vaultId_`| uint8| Vault ID in range 0-2|
+| `proof_`| bytes32[]| Merkle proof of path to leaf element|
+| `beneficiary_`| address| Beneficiary address encoded in leaf element|
+| `share_`| uint256| Beneficiary expected share encoded in leaf element|
 ### <a name="allocateRewards_"></a> allocateRewards() {#allocateRewards_}
 ```
 allocateRewards() public 
@@ -91,7 +94,7 @@ setBeneficiaryRegistry(contract IBeneficiaryRegistry beneficiaryRegistry_) publi
 Must implement IBeneficiaryRegistry and cannot be same as existing
 | Parameter Name | Type | Description |
 |------------|-----| -------|
-| `beneficiaryRegistry_`| contract IBeneficiaryRegistry| Address of new BeneficiaryRegistry contract| 
+| `beneficiaryRegistry_`| contract IBeneficiaryRegistry| Address of new BeneficiaryRegistry contract|
 ## Events
 ### <a name="VaultOpened_"></a> VaultOpened {#VaultOpened_}
 ```
@@ -118,3 +121,8 @@ BeneficiaryRegistryChanged(contract IBeneficiaryRegistry from, contract IBenefic
 ```
 _vaultExists(uint8 vaultId_)
 ```
+## Graphs
+### <a name="dependencyGraph"></a> `Dependency Graph` {#dependencyGraph}
+![Dependency Graph](images/BeneficiaryVaults_dependency_graph.png)
+### <a name="inheritanceGraph"></a> `Inheritance Graph` {#inheritanceGraph}
+![Inheritance Graph](images/BeneficiaryVaults_inheritance_graph.png)
